@@ -1,0 +1,12 @@
+
+{% extends 'encyclopedia/layout.html' %}
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+    {{entries|safe}} <!-- to prevent escaping of characters.-->
+    <!--|safe rakhena vane html elemnts haru jasta ko tastaii dekhaidinxa instead of the webpage.-->    
+    <a href = "{% url 'editentry' title %}">Edit entry</a>
+   
+{% endblock %}

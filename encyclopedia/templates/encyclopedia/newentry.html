@@ -1,0 +1,16 @@
+{% extends 'encyclopedia/layout.html' %}
+{% block title %}
+    New page
+{% endblock %}
+{% block body%}
+<form  action = "{% url 'newentry' %}" method = "POST">
+    {% csrf_token %}
+    <input class = "title" type = "text" name = "title" placeholder = "Title of entry"><br><br>
+    <input class = "textarea" type = "text" name = "content" placeholder ="Enter  MARKDOWN text here."
+    style = "height: 100px; width:50%; padding:10px;"><br><br>
+    <button type = "submit"> Submit </button>
+
+</form>
+    
+
+{% endblock %}
